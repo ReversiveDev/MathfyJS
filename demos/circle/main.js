@@ -1,4 +1,4 @@
-import { Angle, Circle, Vector } from "./lib/Mathfy.js";
+import { Angle, Circle, Vector } from "../../lib/Mathfy.js";
 
 let cvs = document.createElement("canvas");
 cvs.width = innerWidth;
