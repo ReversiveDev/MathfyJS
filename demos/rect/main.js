@@ -51,7 +51,7 @@ let circle = new Circle(20, -20, 16);
     drawCircle(circle.x, circle.y, circle.radius);
 
     ctx.fillStyle = "black";
-    ctx.fillText(rect.isInsideCircle(circle), -200, -200);
+    ctx.fillText(rect.isInside(circle), -200, -200);
     
     ctx.restore();
     requestAnimationFrame(update);
