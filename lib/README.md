@@ -38,21 +38,39 @@ m2.set(0, 3, 1);
 ```
 <br>
 
+- Defina
+```js
+m1.set(x: number, y: number, value: number);
+```
+```js
+m1.set(0, 0, 4);
+```
+<br>
+
 - Multiplique
 ```js
-m1.multiply(m2);
+m1.mul(matrix: Matrix): Matrix;
+```
+```js
+m1 = m1.mul(m2);
 ```
 <br>
 
 - Adicione
 ```js
-m1.add(m2);
+m1.add(matrix: Matrix): Matrix;
+```
+```js
+m1 = m1.add(m2);
 ```
 <br>
 
 - Subtraia
 ```js
-m1.sub(m2);
+m1.sub(matrix: Matrix): Matrix;
+```
+```js
+m1 = m1.sub(m2);
 ```
 
 ### Angle
@@ -78,7 +96,7 @@ let radiansToDegrees = 1.39626*Angle.RADIANS2DEGREES;
 <br>
 
 - Adicione
-```
+```js
 angle.add(angle: number, isDegrees: boolean);
 ```
 ```js
@@ -102,11 +120,18 @@ let vector = new Vector(2, 4);
 
 - Multiplique por uma escalar
 ```js
+vector.mul(scalar: number): Vector;
+```
+```js
 vector = vector.mul(2);
 ```
 <br>
 
 - Adicione
+```js
+vector.add(vector: Vector): Vector;
+vector.add(x: number, y: number): Vector;
+```
 ```js
 vector = vector.add(new Vector(2, 2));
 ```
@@ -114,23 +139,31 @@ vector = vector.add(new Vector(2, 2));
 
 - Subtraia
 ```js
+vector.sub(vector: Vector): Vector;
+vector.sub(x: number, y: number): Vector;
+```
+```js
 vector = vector.sub(new Vector(2, 2));
 ```
 <br>
 
 - Normalize
 ```js
-vector = vector.normalize();
+vector = vector.normalize(): Vector;
 ```
 <br>
 
 - Magnitude
 ```js
-let length = vector.mag();
+let length = vector.mag(): number;
 ```
 <br>
 
 - Defina um valor
+```js
+vector.set(vector: Vector): void;
+vector.set(x: number, y: number): void;
+```
 ```js
 vector.set(4, 2);
 ```
@@ -138,6 +171,19 @@ vector.set(4, 2);
 
 - Obtenha um vetor direção entre dois vetores
 ```js
+vector.lookAt(vector: Vector): Vector;
+```
+```js
 let direction = vector.lookAt(new Vector(9, 7));
+```
+<br>
+
+- Copie um vetor
+```js
+vector.copy(): Vector;
+```
+```js
+let vector2 = vector.copy();
+console.log(vector2 === vector); // false
 ```
 <br>
